@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/spike_piston.png" type="Texture" id=1]
+[ext_resource path="res://objects/surface_objects/SpikePiston.gd" type="Script" id=2]
+[ext_resource path="res://audio/piston.ogg" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2.5, 8 )
+
+[node name="SpikePiston" type="StaticBody2D" groups=[
+"spike_piston",
+]]
+collision_layer = 3
+script = ExtResource( 2 )
+
+[node name="Sprite_Base" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 2, 0 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 5, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2, 0 )
+shape = SubResource( 1 )
+
+[node name="Area2D_Deadly" type="Area2D" parent="." groups=[
+"deadly",
+]]
+position = Vector2( -64, 0 )
+
+[node name="Sprite_Spike" type="Sprite" parent="Area2D_Deadly"]
+z_index = -50
+texture = ExtResource( 1 )
+offset = Vector2( 34, 0 )
+region_enabled = true
+region_rect = Rect2( 5, 0, 59, 16 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D_Deadly"]
+polygon = PoolVector2Array( 5, -6, 57, -6, 63, 0, 57, 6, 5, 6 )
+
+[node name="Audio_Strike" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

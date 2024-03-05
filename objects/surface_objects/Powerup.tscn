@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/powerup.png" type="Texture" id=1]
+[ext_resource path="res://objects/surface_objects/Powerup.gd" type="Script" id=2]
+[ext_resource path="res://materials/bright.tres" type="Material" id=3]
+[ext_resource path="res://audio/get_powerup.ogg" type="AudioStream" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.0
+
+[node name="Powerup" type="Area2D" groups=[
+"powerup",
+]]
+material = ExtResource( 3 )
+z_index = 50
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+use_parent_material = true
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Audio_Get" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+[connection signal="body_entered" from="." to="." method="_body_entered"]

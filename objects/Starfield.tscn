@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/background.png" type="Texture" id=1]
+[ext_resource path="res://sprites/dither.png" type="Texture" id=2]
+[ext_resource path="res://objects/Starfield.gd" type="Script" id=3]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+const vec3 colour = vec3(0.11, 0.086, 0.094);
+
+void fragment() {
+	float literally_the_number_one_point_zero = 1.0f;
+	float slow_time = TIME / 10.0f;
+	float dither = texture(TEXTURE, UV).r;
+	float cloud = modf(texture(SCREEN_TEXTURE, SCREEN_UV).r + dither + slow_time, literally_the_number_one_point_zero);
+	COLOR.rgb = cloud > 0.5 ? colour : vec3(0.0);
+}"
+custom_defines = ""
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[node name="Starfield" type="Sprite"]
+z_index = -4000
+z_as_relative = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 9, 0, 640, 360 )
+script = ExtResource( 3 )
+
+[node name="Dithering" type="Sprite" parent="."]
+material = SubResource( 2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 640, 360 )

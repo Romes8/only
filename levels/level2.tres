@@ -1,0 +1,22 @@
+{
+	"radius": 65.0,
+	"tiles": [1, 0, 1, 1, 2, 1],
+	"grass": [1, 0, 1, 1, 2, 1],
+	"objects": [
+		{"type": "letter", "altitude": 192.0, "angle": 90.0, "id": "level2_letter1"},
+		{"type": "door", "altitude": 0.0, "angle": 40.0, "key": "none", "destination": "level1", "destination_angle": 180.0, "destination_altitude": 0.0},
+		{"type": "door", "altitude": 0.0, "angle": 180.0, "key": "level4_key1", "destination": "level5", "destination_angle": 20.0, "destination_altitude": 0.0},
+		{"type": "spike_floor", "altitude": 16.0, "angle": -28.0},
+		{"type": "spike_floor", "altitude": 64.0, "angle": -32.0},
+		{"type": "spike_floor", "altitude": 16.0, "angle": -40.0},
+		{"type": "spike_floor", "altitude": 64.0, "angle": -40.0},
+		{"type": "spike_floor", "altitude": 16.0, "angle": -52.0},
+		{"type": "spike_floor", "altitude": 64.0, "angle": -48.0},
+		{"type": "spike_wall", "altitude": 10.0, "angle": 90.0},
+		{"type": "spike_wall", "altitude": 30.0, "angle": 90.0},
+		{"type": "spike_wall", "altitude": 50.0, "angle": 90.0},
+		{"type": "spike_wall", "altitude": 70.0, "angle": 90.0},
+		{"type": "powerup", "altitude": 32.0, "angle": -120.0, "which_power": "dash"},
+		{"type": "tree", "altitude": 0.0, "angle": 200.0}
+	]
+}

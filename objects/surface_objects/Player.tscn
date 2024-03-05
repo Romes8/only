@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://sprites/player.png" type="Texture" id=1]
+[ext_resource path="res://objects/surface_objects/Player.gd" type="Script" id=2]
+[ext_resource path="res://audio/jump.ogg" type="AudioStream" id=3]
+[ext_resource path="res://audio/dash.ogg" type="AudioStream" id=4]
+[ext_resource path="res://audio/land.ogg" type="AudioStream" id=5]
+[ext_resource path="res://audio/double_jump.ogg" type="AudioStream" id=6]
+[ext_resource path="res://audio/player_hit.ogg" type="AudioStream" id=7]
+[ext_resource path="res://sprites/punch.png" type="Texture" id=8]
+[ext_resource path="res://audio/brick_destroy.ogg" type="AudioStream" id=9]
+[ext_resource path="res://audio/punch.ogg" type="AudioStream" id=10]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.0
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 8, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( -8, 0 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="Sprite_Punch" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -12 )
+rotation = -1.5708
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="RayCast2D_Punch" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, -8 )
+
+[node name="Audio_Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="Audio_DoubleJump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+bus = "SFX"
+
+[node name="Audio_Dash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Audio_Land" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+volume_db = -60.0
+bus = "SFX"
+
+[node name="Audio_Hit" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+stream = ExtResource( 7 )
+bus = "SFX"
+
+[node name="Audio_Punch" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+stream = ExtResource( 10 )
+attenuation = 0.153893
+bus = "SFX"
+
+[node name="Audio_BrickDestroy" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+stream = ExtResource( 9 )
+bus = "SFX"
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Timer_MuteLand" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+[connection signal="timeout" from="Timer_MuteLand" to="." method="_on_Timer_MuteLand_timeout"]

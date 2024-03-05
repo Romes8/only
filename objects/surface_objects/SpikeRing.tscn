@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/surface_objects/SpikeRing.gd" type="Script" id=1]
+
+[node name="SpikeRing" type="Node2D" groups=[
+"spike_ring",
+]]
+script = ExtResource( 1 )

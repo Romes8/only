@@ -1,0 +1,33 @@
+{
+	"radius": 65,
+	"tiles": [2, 1, 2, 2, 3, 3, 2, 3],
+	"grass": [2, 1, 2, 2, 3, 3, 2, 3],
+	"objects": [
+		{"type": "platform", "angle": -115, "altitude": 72},
+		{"type": "door", "altitude": 0,"angle": -75,"destination": "level1","destination_altitude": 0,"destination_angle": -55.0,"key": "none"},
+		{"type": "door", "altitude": 0,"angle": 40,"destination": "level6","destination_altitude": 0.0,"destination_angle": 90.0,"key": "level3_key2"},
+		{"type": "letter", "altitude": 112,"angle": -115,"id": "level4_letter1"},
+		{"type": "key","altitude": 32,"angle": -15,"id": "level4_key1"},
+		{"type": "tree", "altitude": 0,"angle": -90},
+		{"type": "tree", "altitude": 0,"angle": 20},
+		{"type": "spike_wall", "altitude": 16,"angle": 0},
+		{"type": "spike_wall", "altitude": 32,"angle": 0},
+		{"type": "spike_wall", "altitude": 48,"angle": 0},
+		{"type": "spike_wall", "altitude": 64,"angle": 0},
+		{"type": "spike_wall", "altitude": 80,"angle": 0},
+		{"type": "spike_wall", "altitude": 96,"angle": 0},
+		{"type": "spike_wall", "altitude": 112,"angle": 0},
+		{"type": "spike_floor", "altitude": 56,"angle": -35},
+		{"type": "spike_floor", "altitude": 56,"angle": -25},
+		{"type": "spike_floor", "altitude": 8,"angle": -35},
+		{"type": "spike_floor", "altitude": 8,"angle": -20},
+		{"type": "spike_floor", "altitude": 8,"angle": -5},
+		{"type": "brick", "altitude": 0.0, "angle": 120.0},
+		{"type": "brick", "altitude": 16.0, "angle": 120.0},
+		{"type": "brick", "altitude": 32.0, "angle": 120.0},
+		{"type": "brick", "altitude": 48.0, "angle": 120.0},
+		{"type": "brick", "altitude": 64.0, "angle": 120.0},
+		{"type": "brick", "altitude": 80.0, "angle": 120.0},
+		{"type": "brick", "altitude": 96.0, "angle": 120.0}
+	]
+}

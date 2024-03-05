@@ -1,0 +1,23 @@
+{
+	"radius": 65.0,
+	"tiles": [4, 3, 3, 2, 3, 2, 2, 3, 3, 2],
+	"grass": [4, 3, 3, 2, 3, 2, 2, 3, 3, 2],
+	"objects": [
+		{"type": "door", "altitude": 0.0, "angle": 30.0, "key": "none", "destination": "level2", "destination_angle": 170.0, "destination_altitude": 0.0},
+		{"type": "spike_ring", "altitude": 0.0, "angle": 0.0, "spike_altitude": 64.0, "number_of_spikes": 40},
+		{"type": "spike_piston", "altitude": 0.0, "angle": 0.0},
+		{"type": "spike_piston", "altitude": 0.0, "angle": 60.0},
+		{"type": "spike_piston", "altitude": 0.0, "angle": 120.0},
+		{"type": "spike_piston", "altitude": 0.0, "angle": 180.0},
+		{"type": "spike_piston", "altitude": 0.0, "angle": 240.0},
+		{"type": "spike_piston", "altitude": 0.0, "angle": 300.0},
+		{"type": "letter", "altitude": 32.0, "angle": 210.0, "id": "level5_letter1"},
+		{"type": "powerup", "altitude": 32.0, "angle": 90.0, "which_power": "punch"},
+		{"type": "brick", "altitude": 0.0, "angle": -90.0},
+		{"type": "brick", "altitude": 16.0, "angle": -90.0},
+		{"type": "brick", "altitude": 32.0, "angle": -90.0},
+		{"type": "brick", "altitude": 0.0, "angle": 150.0},
+		{"type": "brick", "altitude": 16.0, "angle": 150.0},
+		{"type": "brick", "altitude": 32.0, "angle": 150.0}
+	]
+}

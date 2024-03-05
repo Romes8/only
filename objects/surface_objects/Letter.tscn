@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/letter.png" type="Texture" id=1]
+[ext_resource path="res://objects/surface_objects/Letter.gd" type="Script" id=2]
+[ext_resource path="res://audio/get_letter.ogg" type="AudioStream" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.0
+
+[node name="Letter" type="Area2D" groups=[
+"letter",
+]]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+pause_mode = 2
+texture = ExtResource( 1 )
+
+[node name="Audio_Get" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="Tween" type="Tween" parent="."]
+pause_mode = 2
+[connection signal="body_entered" from="." to="." method="_body_entered"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/Starfield.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/pixel.png" type="Texture" id=4]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 10, 180, 1 )
+flag_disable_z = true
+direction = Vector3( -1, 0, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 4.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer_Stars" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.25, 0.25 )
+
+[node name="Particles2D" type="Particles2D" parent="ParallaxLayer_Stars"]
+position = Vector2( 640, 90 )
+amount = 1000
+lifetime = 240.0
+preprocess = 240.0
+visibility_rect = Rect2( -640, -360, 1280, 720 )
+process_material = SubResource( 1 )
+texture = ExtResource( 4 )
+
+[node name="ParallaxLayer_Stars2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="Particles2D" type="Particles2D" parent="ParallaxLayer_Stars2"]
+position = Vector2( 640, 90 )
+amount = 1000
+lifetime = 240.0
+preprocess = 240.0
+visibility_rect = Rect2( -640, -360, 1280, 720 )
+process_material = SubResource( 1 )
+texture = ExtResource( 4 )
+
+[node name="ParallaxLayer_Stars3" type="ParallaxLayer" parent="."]
+z_index = 3000
+z_as_relative = false
+motion_scale = Vector2( 1.5, 1.5 )
+
+[node name="Particles2D" type="Particles2D" parent="ParallaxLayer_Stars3"]
+position = Vector2( 640, 90 )
+amount = 1000
+lifetime = 240.0
+preprocess = 240.0
+visibility_rect = Rect2( -640, -360, 1280, 720 )
+process_material = SubResource( 1 )
+texture = ExtResource( 4 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0, 0 )
+
+[node name="Starfield" parent="ParallaxLayer" instance=ExtResource( 2 )]

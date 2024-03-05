@@ -1,0 +1,16 @@
+{
+	"radius": 65.0,
+	"tiles": [0],
+	"grass": [0],
+	"objects": [
+		{"type": "platform", "altitude": 100.0, "angle": 170.0},
+		{"type": "platform", "altitude": 192.0, "angle": -140.0},
+		{"type": "key", "altitude": 224.0, "angle": -140.0, "id": "level1_key1"},
+		{"type": "letter", "altitude": 16.0, "angle": -120.0, "id": "level1_letter1"},
+		{"type": "tree", "altitude": 0.0, "angle": -130.0},
+		{"type": "tree", "altitude": 0.0, "angle": 20.0},
+		{"type": "door", "altitude": 0.0, "angle": 190.0, "key": "none", "destination": "level2", "destination_angle": 20.0, "destination_altitude": 0.0},
+		{"type": "door", "altitude": 0.0, "angle": 70.0, "key": "none", "destination": "level3", "destination_angle": 100.0, "destination_altitude": 0.0},
+		{"type": "door", "altitude": 0.0, "angle": 310.0, "key": "level1_key1", "destination": "level4", "destination_angle": -65.0, "destination_altitude": 0.0}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"radius": 65.0,
+	"tiles": [0, 0, 1, 0, 1, 1],
+	"grass": [0, 0, 1, 0, 1, 1],
+	"objects": [
+		{"type": "door", "altitude": 0.0, "angle": 110.0, "key": "level3_key1", "destination": "level1", "destination_angle": 80.0, "destination_altitude": 0.0},
+		{"type": "powerup", "altitude": 64.0, "angle": -90.0, "which_power": "double_jump"},
+		{"type": "spike_wall", "altitude": 10.0, "angle": 180.0},
+		{"type": "spike_wall", "altitude": 10.0, "angle": 0.0},
+		{"type": "spike_wall", "altitude": 30.0, "angle": 180.0},
+		{"type": "spike_wall", "altitude": 30.0, "angle": 0.0},
+		{"type": "spike_wall", "altitude": 50.0, "angle": 180.0},
+		{"type": "spike_wall", "altitude": 50.0, "angle": 0.0},
+		{"type": "spike_wall", "altitude": 70.0, "angle": 180.0},
+		{"type": "spike_wall", "altitude": 70.0, "angle": 0.0},
+		{"type": "key", "altitude": 8.0, "angle": 40.0, "id": "level3_key2"},
+		{"type": "brick", "altitude": 0.0, "angle": 24.0},
+		{"type": "brick", "altitude": 0.0, "angle": 56.0},
+		{"type": "brick", "altitude": 16.0, "angle": 24.0},
+		{"type": "brick", "altitude": 16.0, "angle": 34.6},
+		{"type": "brick", "altitude": 16.0, "angle": 45.2},
+		{"type": "brick", "altitude": 16.0, "angle": 56.0},
+		{"type": "platform", "altitude": 96.0, "angle": -90.0},
+		{"type": "platform", "altitude": 192.0, "angle": -70.0},
+		{"type": "platform", "altitude": 192.0, "angle": -110.0},
+		{"type": "platform", "altitude": 286.0, "angle": -130.0},
+		{"type": "platform", "altitude": 286.0, "angle": -50.0},
+		{"type": "key", "altitude": 320.0, "angle": -130.0, "id": "level3_key1"},
+		{"type": "letter", "altitude": 320.0, "angle": -50.0, "id": "level3_letter1"},
+		{"type": "tree", "altitude": 0.0, "angle": 130.0},
+		{"type": "tree", "altitude": 0.0, "angle": -70.0}
+	]
+}

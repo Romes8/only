@@ -1,0 +1,8 @@
+{
+	"radius": 65.0,
+	"tiles": [4],
+	"grass": [4],
+	"objects": [
+		{"type": "letter", "altitude": 64.0, "angle": -90.0, "id": "level6_letter1"}
+	]
+}
